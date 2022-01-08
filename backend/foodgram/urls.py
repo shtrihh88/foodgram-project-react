@@ -8,7 +8,7 @@ api_patterns = [
     path('', include('users.urls')),
 ]
 
-urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('api/', include(api_patterns)),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = [path('admin/', admin.site.urls),
+               path('api/', include(api_patterns)),
+               ] + static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
