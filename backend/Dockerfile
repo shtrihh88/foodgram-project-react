@@ -4,9 +4,7 @@ WORKDIR /backend
 
 COPY requirements.txt .
 
-RUN python3 -m pip install --upgrade pip && \
-    pip3 install -r ./requirements.txt --no-cache-dir
-
+RUN pip3 install -r ./requirements.txt --no-cache-dir
 
 COPY . .
 
