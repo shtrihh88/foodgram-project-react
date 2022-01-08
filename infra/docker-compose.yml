@@ -12,8 +12,8 @@ services:
     image: shtrihh88/api_foodgram:latest
     restart: always
     volumes:
-      - static_value:/app/static/
-      - media_value:/app/media/
+      - static_value:/backend/static/
+      - media_value:/backend/media/
     depends_on:
       - db
     env_file:
@@ -40,7 +40,7 @@ services:
       - backend
       - frontend
 
-  volumes:
-    static_value:
-    media_value:
-    postres_data:
+volumes:
+  static_value:
+  media_value:
+  postres_data:
