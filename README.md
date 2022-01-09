@@ -1,7 +1,7 @@
 # Foodgram - Дипломный проект Яндекс.Практикум
 
 ***
-## Развёрнутый и запущенный проект можно посмотреть по адресу http://51.250.23.112/api/v1
+## Развёрнутый и запущенный проект можно посмотреть по адресу http://51.250.23.112/
 ![example workflow](https://github.com/shtrihh88/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ***
 
@@ -52,9 +52,9 @@ DB_PORT=5432
 ### 4.Запустить проект, создать и применить миграции, собрать статику.
 ```
 docker-compose up -d --build
-docker-compose exec web python manage.py makemigrations --noinput
-docker-compose exec web python manage.py migrate --noinput
-docker-compose exec web python manage.py collectstatic --no-input
+docker-compose exec backend python manage.py makemigrations --noinput
+docker-compose exec backend python manage.py migrate --noinput
+docker-compose exec backend python manage.py collectstatic --no-input
 ```
 
 ***
