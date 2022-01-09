@@ -204,9 +204,9 @@ class FavouriteSerializer(serializers.ModelSerializer):
         fields = ('user', 'recipe')
 
     def validate(self, data):
-        user = data['user']
+        user = self.context.get('request').user
         recipe_id = data['recipe'].id
-        if Favorite.objects.filter(user=user, recipe__id=recipe_id).exists():
+        if Favorite.objects.filter(user=user, recipe=recipe_id).exists():
             raise ValidationError('Рецепт уже добавлен в избранное!')
         return data
 
