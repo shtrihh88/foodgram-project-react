@@ -9,10 +9,7 @@ services:
       - ./.env
 
   backend:
-    build:
-      context: ../backend
-      dockerfile: Dockerfile
-    # image: shtrihh88/api_foodgram:latest
+     image: shtrihh88/api_foodgram:latest
     restart: always
     volumes:
       - static_value:/backend/static/
