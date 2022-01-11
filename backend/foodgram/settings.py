@@ -2,9 +2,9 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '-)wv^pw%yg$(aa6z25=l4fe(e11#*!u79i9lo+#an19k^fhclc'
+SECRET_KEY = os.getenv('SECRET_KEY', default='need_changed')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,6 +55,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'foodgram.wsgi.application'
+
+RECIPES_LIMIT = 3
 
 DATABASES = {
     # 'default': {
@@ -129,7 +131,7 @@ DJOSER = {
     'USER_ID_FIELD': 'id',
     'HIDE_USERS': False,
     'PERMISSIONS': {
-        'user': ['rest_framework.permissions.AllowAny'],
+        'user': ['rest_framework.permissions.IsAuthenticated'],
         'user_list': ['rest_framework.permissions.AllowAny'],
     },
 }
